@@ -19,6 +19,7 @@ public class Main {
                 System.out.println("Tecle 8 Para Listar As Consultas Cadastradas: ");
                 System.out.println("Tecle 9 Para Cadastrar Um Exame: ");
                 System.out.println("Tecle 10 Para Listar Os Exames Cadastrados: ");
+                System.out.println("Tecle 0 Para Sair");
                 op = Console.readInt("\nDigite A Opção Desejada: ");
             
             // PROCESSAMENTO && SAIDA DE DADOS
@@ -64,9 +65,8 @@ public class Main {
                     break;
                 }
 
-
-
         }while(op!=0);
+        System.out.println("ATÉ A PROXIMA!!");
     }
     
 }
