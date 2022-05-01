@@ -55,13 +55,13 @@ public class Main {
                     case 8: ListarConsulta listarConsulta = new ListarConsulta();
                             listarConsulta.renderizar(); 
                             break;
-                    
-                    case 9: ListarExame listarExame = new ListarExame();
-                            listarExame.renderizar();
+
+                    case 9: CadastrarExame cadastrarExame = new CadastrarExame();
+                            cadastrarExame.renderizar();
                     break;
 
-                    case 10: CadastrarExame cadastrarExame = new CadastrarExame();
-                            cadastrarExame.renderizar();
+                    case 10: ListarExame listarExame = new ListarExame();
+                            listarExame.renderizar();
                     break;
                 }
 

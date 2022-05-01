@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 
 import models.Exame;
+import models.Paciente;
 
 public class ExameController {
     
@@ -13,5 +14,14 @@ public class ExameController {
     }
     public ArrayList<Exame> listar(){
         return exames;
+    }
+
+    public Exame buscarPaciente(Paciente paciente, String data, String hora){
+        for (Exame pacienteCadastrado : exames) {
+            if (pacienteCadastrado.getPaciente().equals(paciente) && pacienteCadastrado.getData().equals(data) && pacienteCadastrado.getHora().equals(hora)){
+                return pacienteCadastrado;
+            }
+        }
+        return null;
     }
 }

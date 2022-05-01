@@ -18,19 +18,25 @@ public class CadastrarExame {
     //Condicional Paciente
         System.out.println("\n--MENU CADASTRO DE EXAMES--");
         String cpfPaciente = Console.readString("Informe o CPF do Paciente: ");
-        Paciente paciente = PacienteController.buscarPorCpf(cpfPaciente);
-        do{
-            if(paciente != null){
-                exame.setPaciente(paciente);
-                exame.setNome(Console.readString("Informe o Nome do Exame: "));
-                exame.setData(Console.readString("Informe a data do Exame: "));
-                exame.setHora(Console.readString("Informe a Hora do Exame: "));
-                exames.cadastrar(exame);
-            }
-            else{
-                System.out.println("\nPACIENTE NÃO ENCONTRADO");
-                opP = Console.readInt("Tecle 1 para tentar novamente Ou qualquer tecla para sair: ");
-            }
-        }while(opP == 1);
+        // VALIDAR CADASTRO PACIENTE
+            Paciente paciente = PacienteController.buscarPorCpf(cpfPaciente);
+                if(paciente != null){         
+                    exame.setPaciente(paciente);
+                    exame.setNome(Console.readString("Informe o Nome do Exame: "));
+                    exame.setData(Console.readString("Informe a data do Exame: "));
+                    exame.setHora(Console.readString("Informe a Hora do Exame: "));
+                     // Validar Disponibilidade do Paciente
+                        Exame buscarPaciente = exames.buscarPaciente(paciente, exame.getData(), exame.getHora());
+                            if(buscarPaciente == null){
+                                exames.cadastrar(exame);
+                                System.out.println("\n--EXAME AGENDADO--");
+                            }
+                            else{
+                               System.out.println("\nPACIENTE JÁ POSSUI EXAME NESTE DIA E HORARIO.");
+                            }
+                }
+                else{
+                    System.out.println("\nPACIENTE NÃO ENCONTRADO");
+                }
     }
 }
