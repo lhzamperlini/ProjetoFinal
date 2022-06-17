@@ -12,31 +12,30 @@ public class CadastrarExame {
         Exame exame = new Exame();
         ExameController exames = new ExameController();
         PacienteController PacienteController = new PacienteController();
-        
-    // Variavel Condicional
+
+        // Variavel Condicional
         int opP = 1;
-    //Condicional Paciente
+        // Condicional Paciente
         System.out.println("\n--MENU CADASTRO DE EXAMES--");
         String cpfPaciente = Console.readString("Informe o CPF do Paciente: ");
         // VALIDAR CADASTRO PACIENTE
-            Paciente paciente = PacienteController.buscarPorCpf(cpfPaciente);
-                if(paciente != null){         
-                    exame.setPaciente(paciente);
-                    exame.setNome(Console.readString("Informe o Nome do Exame: "));
-                    exame.setData(Console.readString("Informe a data do Exame: "));
-                    exame.setHora(Console.readString("Informe a Hora do Exame: "));
-                     // Validar Disponibilidade do Paciente
-                        Exame buscarPaciente = exames.buscarPaciente(paciente, exame.getData(), exame.getHora());
-                            if(buscarPaciente == null){
-                                exames.cadastrar(exame);
-                                System.out.println("\n--EXAME AGENDADO--");
-                            }
-                            else{
-                               System.out.println("\nPACIENTE JÁ POSSUI EXAME NESTE DIA E HORARIO.");
-                            }
-                }
-                else{
-                    System.out.println("\nPACIENTE NÃO ENCONTRADO");
-                }
+        Paciente paciente = PacienteController.buscarPorCpf(cpfPaciente);
+        if (paciente != null) {
+            exame.setPaciente(paciente);
+            ;
+            exame.setNome(Console.readString("Informe o Nome do Exame: "));
+            exame.setData(Console.readString("Informe a data do Exame: "));
+            exame.setHora(Console.readString("Informe a Hora do Exame: "));
+            // Validar Disponibilidade do Paciente
+            Exame buscarPaciente = exames.buscarPaciente(paciente, exame.getData(), exame.getHora());
+            if (buscarPaciente == null) {
+                exames.cadastrar(exame);
+                System.out.println("\n--EXAME AGENDADO--");
+            } else {
+                System.out.println("\nPACIENTE JÁ POSSUI EXAME NESTE DIA E HORARIO.");
+            }
+        } else {
+            System.out.println("\nPACIENTE NÃO ENCONTRADO");
+        }
     }
 }
