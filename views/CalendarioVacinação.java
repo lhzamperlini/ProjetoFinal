@@ -2,8 +2,10 @@ package views;
 
 import controllers.VacinaController;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CalendarioVacinação {
+
+public class CalendarioVacinação implements IViews{
     public void renderizar() {
         // Declaração de Variaveis
         int op, op2;

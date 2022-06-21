@@ -7,8 +7,9 @@ import models.Consulta;
 import models.Medico;
 import models.Paciente;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarConsulta {
+public class CadastrarConsulta implements IViews{
     public void renderizar() {
         Consulta consulta = new Consulta();
         PacienteController PacienteController = new PacienteController();

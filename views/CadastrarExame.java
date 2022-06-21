@@ -5,16 +5,16 @@ import controllers.PacienteController;
 import models.Exame;
 import models.Paciente;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarExame {
+
+public class CadastrarExame implements IViews{
 
     public void renderizar() {
         Exame exame = new Exame();
         ExameController exames = new ExameController();
         PacienteController PacienteController = new PacienteController();
 
-        // Variavel Condicional
-        int opP = 1;
         // Condicional Paciente
         System.out.println("\n--MENU CADASTRO DE EXAMES--");
         String cpfPaciente = Console.readString("Informe o CPF do Paciente: ");

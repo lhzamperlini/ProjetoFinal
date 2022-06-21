@@ -1,9 +1,11 @@
 package views;
 
+
 import controllers.MedicoController;
 import models.Medico;
+import views.interfaces.IViews;
 
-public class ListarMedico {
+public class ListarMedico implements IViews{
 
     public void renderizar(){
         MedicoController medicoController = new MedicoController();

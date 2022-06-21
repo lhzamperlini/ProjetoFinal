@@ -1,11 +1,11 @@
 package views;
 
 import utils.Console;
-
+import views.interfaces.IViews;
 import controllers.PacienteController;
 import models.Paciente;
 
-public class AlterarPaciente {
+public class AlterarPaciente implements IViews{
     public void renderizar(){
         PacienteController pacienteController = new PacienteController();
         String dado = "";

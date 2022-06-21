@@ -3,8 +3,10 @@ package views;
 import models.Paciente;
 import utils.Console;
 import controllers.PacienteController;
+import views.interfaces.IViews;
 
-public class CadastrarPaciente {
+
+public class CadastrarPaciente implements IViews{
     public void renderizar(){
         Paciente paciente = new Paciente();
         PacienteController pacientes = new PacienteController();

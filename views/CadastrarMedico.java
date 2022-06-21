@@ -3,8 +3,9 @@ package views;
 import controllers.MedicoController;
 import models.Medico;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarMedico {
+public class CadastrarMedico implements IViews{
 
     public void renderizar(){
         int op = 0;

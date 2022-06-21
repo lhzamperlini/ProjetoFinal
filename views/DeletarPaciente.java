@@ -3,8 +3,10 @@ package views;
 import controllers.PacienteController;
 import models.Paciente;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class DeletarPaciente {
+
+public class DeletarPaciente implements IViews{
     public void renderizar(){
         int op = 0;
         PacienteController pacienteController = new PacienteController();

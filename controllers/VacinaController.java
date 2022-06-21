@@ -1,8 +1,11 @@
 package controllers;
 
-public class VacinaController {
+import controllers.interfaces.IVacinaController;
+
+public class VacinaController implements IVacinaController {
     private String resultado;
 
+    @Override
     public String calendario(int op, int op2) {
 
         if (op == 1) {

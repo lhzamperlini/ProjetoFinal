@@ -1,21 +1,26 @@
 package controllers;
 
 import java.util.ArrayList;
+
+import controllers.interfaces.IPacienteController;
 import models.Paciente;
 
-public class PacienteController {
+public class PacienteController implements IPacienteController {
     
     private static ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
     int cont = -1;
 
+    @Override
     public void cadastrar(Paciente paciente) {
         pacientes.add(paciente);
     }
 
+    @Override
     public ArrayList<Paciente> listar() {
         return pacientes;
     }
 
+    @Override
     public Paciente buscarPorCpf(String cpf){
         for (Paciente pacienteCadastrado : pacientes) {
             if (pacienteCadastrado.getCpf().equals(cpf)) {
@@ -25,7 +30,8 @@ public class PacienteController {
         return null;
     }
 
-     public Paciente removerPaciente(String cpf){
+    @Override
+    public Paciente removerPaciente(String cpf){
         for (Paciente pacienteCadastrado : pacientes) {
             cont = cont+1;
             if (pacienteCadastrado.getCpf().equals(cpf)) {
@@ -41,6 +47,7 @@ public class PacienteController {
         return pacientes.get(cont);
     }
 
+    @Override
     public Paciente alterarDados(String cpf, int op, String dado){
         for (Paciente pacienteCadastrado : pacientes) {
             cont = cont+1;
