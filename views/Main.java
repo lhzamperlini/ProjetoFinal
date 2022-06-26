@@ -20,6 +20,8 @@ public class Main {
                         System.out.println("Tecle 9 Para Cadastrar Um Exame: ");
                         System.out.println("Tecle 10 Para Listar Os Exames Cadastrados: ");
                         System.out.println("Tecle 11 Para Obter o Calendario De Vacinação Contra COVID");
+                        System.out.println("Tecle 12 Para Alugar Salas(UTI)");
+                        System.out.println("Tecle 13 Para  Listar as Salas Alugadas(UTI)");
                         System.out.println("Tecle 0 Para Sair");
                         op = Console.readInt("\nDigite A Opção Desejada: ");
 
@@ -77,6 +79,15 @@ public class Main {
                                 case 11:
                                         CalendarioVacinação calendarioVacinação = new CalendarioVacinação();
                                         calendarioVacinação.renderizar();
+                                        break;
+                                case 12:
+                                        SalasUti salasUti = new SalasUti();
+                                        salasUti.renderizar();
+                                        break;
+                        
+                                case 13:
+                                        ListarSalas listarsala = new ListarSalas();
+                                        listarsala.renderizar();
                                         break;
                         }
 
